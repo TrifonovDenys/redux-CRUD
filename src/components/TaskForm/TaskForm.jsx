@@ -9,7 +9,10 @@ export const TaskForm = () => {
   const handleSubmit = event => {
     event.preventDefault();
     const form = event.target;
-    dispatch(addTask(form.elements.text.value));
+    if (form.text.value === '') {
+      return dispatch(addTask('empty input'));
+    }
+    dispatch(addTask(form.text.value));
     form.reset();
   };
 

@@ -1,6 +1,6 @@
 import { nanoid } from 'nanoid';
 
-export const addTask = text => {
+export const addTask = (text = 'без названя') => {
   return {
     type: 'tasks/addTask',
     payload: {
